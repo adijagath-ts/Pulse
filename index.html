@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Developer Portfolio of Your Name">
+    <title>Your Name — Developer Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="nav" aria-label="Main navigation">
+        <div class="container nav-inner">
+            <span class="nav-brand">Adijagath Thekkuttu Shaju</span>
+            <ul class="nav-links">
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <button class="theme-btn" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <header class="hero" id="home">
+            <div class="container">
+                <p class="hero-tag reveal">Hey, I'm</p>
+                <h1 class="hero-name reveal">Adijagath Thekkuttu Shaju</h1>
+                <p class="hero-role reveal">UI Designer &amp; Web Developer — <span class="highlight">B.Tech EL, Kerala</span></p>
+                <p class="hero-bio reveal">I design systems, build for the web, and automate the boring stuff.</p>
+                
+                <div class="hero-ctas reveal">
+                    <a href="#projects" class="btn btn-primary">See My Projects</a>
+                    <a href="https://figma.com" target="_blank" rel="noopener" class="btn btn-secondary">View Figma Design</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="section" id="projects">
+            <div class="container">
+                <p class="section-label">01 — Work</p>
+                <h2 class="section-title">Projects</h2>
+                
+                <div class="projects-grid">
+                    <article class="card reveal">
+                        <span class="card-tag">UI / UX Design</span>
+                        <h3 class="card-title">Tide</h3>
+                        <p class="card-desc">A complete task-manager app design built in Figma: a token-based design system, seven screens, and a clickable prototype.</p>
+                        <div class="card-meta">
+                            <span class="chip">Figma</span>
+                            <span class="chip">Design System</span>
+                        </div>
+                        <a href="https://www.figma.com/design/r23YVYOjwxV3FSKIZk8wC2/Untitled?node-id=0-1&p=f&t=pEIoExof0OjcfiUl-0" target="_blank" rel="noopener" class="card-link">View prototype</a>
+                    </article>
+
+                    <article class="card reveal">
+                        <span class="card-tag">Frontend Development</span>
+                        <h3 class="card-title">Folio</h3>
+                        <p class="card-desc">A clean, responsive personal portfolio website built with semantic HTML, native CSS custom properties, and vanilla JavaScript for theme swapping.</p>
+                        <div class="card-meta">
+                            <span class="chip">HTML</span>
+                            <span class="chip">CSS Variables</span>
+                            <span class="chip">JavaScript</span>
+                        </div>
+                        <a href="#" target="_blank" rel="noopener" class="card-link">View live site</a>
+                    </article>
+
+                    <article class="card reveal">
+                        <span class="card-tag">Backend Development</span>
+                        <h3 class="card-title">Pulse</h3>
+                        <p class="card-desc">A secure data monitoring dashboard application running on an integrated Python automation architecture with immediate system reporting.</p>
+                        <div class="card-meta">
+                            <span class="chip">Python</span>
+                            <span class="chip">API Integration</span>
+                        </div>
+                        <a href="#" target="_blank" rel="noopener" class="card-link">View repository</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="skills">
+            <div class="container">
+                <h2 class="section-title">Skills</h2>
+                <div class="skill-reveal">
+                    <div class="skill-head">
+                        <span class="skill-name">HTML &amp; CSS</span>
+                        <span class="skill-pct">75%</span>
+                    </div>
+                    <div class="skill-track">
+                        <div class="skill-fill" style="--w: 75%; background: var(--pri-low);"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="container">
+                <h2 class="section-title">Contact</h2>
+                <p>Let's connect via <a href="mailto:adishadows07.email@example.com">Email</a>, <a href="https://github.com/adijagath-ts">GitHub</a>, or <a href="https://linkedin.com/in/adijagath-t-s-3342aa3a5">LinkedIn</a>.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Adijagath Thekkuttu Shaju. Handcrafted with love.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

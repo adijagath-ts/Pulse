@@ -1,0 +1,184 @@
+/* ==========================================================================
+   3.1 DESIGN TOKENS (TOP OF FILE)
+   ========================================================================== */
+:root {
+    /* Colors - matching Figma foundations */
+    --primary: #5A8FB0;
+    --ink: #1a1a1a;
+    --ink-muted: #6B6B6B;
+    --surface: #FCFAF3;
+    --card: #FFFFFF;
+    --border: #FFE9DB;
+    --pri-high: #C76A55;
+    --pri-med: #C9A23A;
+    --pri-low: #7A9165;
+
+    /* Type scale */
+    --display: clamp(2.2rem, 6vw, 3.6rem);
+    --h1: 2rem;
+    --h2: 1.6rem;
+    --h3: 1.2rem;
+    --body: 1rem;
+    --cap: 0.875rem;
+    --sm: 0.75rem;
+
+    /* Spacing - 8-point grid in rem */
+    --s4: 0.25rem;
+    --s8: 0.5rem;
+    --s12: 0.75rem;
+    --s16: 1rem;
+    --s24: 1.5rem;
+    --s32: 2rem;
+    --s48: 3rem;
+    --s64: 4rem;
+
+    /* Radius + shadow */
+    --r-sm: 8px;
+    --r-md: 12px;
+    --r-lg: 16px;
+    --r-pill: 999px;
+    --shadow: 0 4px 16px rgba(26,26,26,0.06);
+}
+
+/* ==========================================================================
+   3.2 DARK MODE MAPS
+   ========================================================================== */
+body.dark {
+    --primary: #7FB3D5;
+    --ink: #F5F1E4;
+    --ink-muted: #9BA3AC;
+    --surface: #0F1419;
+    --card: #1A2332;
+    --border: rgba(255,255,255,0.12);
+    --shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+/* ==========================================================================
+   3.3 RESET AND BASE STYLES
+   ========================================================================== */
+/* Reset predictable sizing, remove default spacing gaps */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth transitions for navigation link jumps */
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--surface);
+    color: var(--ink);
+    line-height: 1.65;
+    transition: background-color 0.3s ease, color 0.3s ease; /* smooth dark mode fade */
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 var(--s24); /* Centres content, caps global inner width */
+}
+
+/* ==========================================================================
+   PART 4 - CSS LAYOUTS (FLEXBOX & GRID RULES)
+   ========================================================================== */
+/* Flexbox applied to the direct PARENT wrappers for linear items */
+.nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--s16) 0;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: var(--s24);
+}
+
+/* Grid applied to the direct PARENT container for project cards to wrap auto-responsively */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--s24);
+    margin-top: var(--s32);
+}
+
+/* Component Placeholders for Visualizing Setup Structure */
+.card {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    padding: var(--s24);
+    border-radius: var(--r-md);
+    box-shadow: var(--shadow);
+}
+.btn {
+    display: inline-block;
+    padding: var(--s8) var(--s16);
+    border-radius: var(--r-sm);
+    margin-right: var(--s8);
+}
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-secondary { border: 1px solid var(--border); }
+.chip {
+    display: inline-block;
+    background: var(--border);
+    padding: var(--s4) var(--s8);
+    font-size: var(--sm);
+    border-radius: var(--r-pill);
+    margin-right: var(--s4);
+}
+.btn-secondary { border: 2px solid var(--border); color: var(--ink); }
+
+/* SECTIONS + PROJECTS GRID + CARDS */
+.section { padding: var(--s64) 0; }
+.section-alt { background-color: var(--card); }
+.section-label { color: var(--primary); font-size: var(--sm); letter-spacing: 0.18em; text-transform: uppercase; }
+.section-title { font-size: var(--h1); font-weight: 800; margin-bottom: var(--s32); }
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--s24);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: var(--s24);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease;
+}
+
+.card:hover { transform: translateY(-4px); }
+.card-tag { color: var(--primary); font-size: var(--sm); text-transform: uppercase; }
+.card-title { font-size: var(--h3); font-weight: 700; margin-weight: var(--s8) 0 var(--s12); }
+.card-desc { flex: 1; color: var(--ink-muted); font-size: var(--cap); }
+.card-meta { display: flex; flex-wrap: wrap; gap: var(--s8); margin: var(--s16) 0; }
+.chip { font-size: var(--sm); padding: var(--s4) var(--s12); border-radius: var(--r-pill); border: 1px solid var(--border); }
+.card-link { color: var(--primary); font-weight: 600; }
+
+/* SKILL BAR + RESPONSIVE */
+.skill-track { height: 8px; background: var(--border); border-radius: var(--r-pill); overflow: hidden; }
+.skill-fill { height: 100%; width: var(--w); /* set per-skill in HTML */ border-radius: var(--r-pill); }
+
+@media (max-width: 600px) {
+    .hero { min-height: auto; padding: var(--s48) 0; }
+    .nav-links { gap: var(--s16); }
+    .section { padding: var(--s48) 0; }
+    .contact-link { width: 100%; }
+}
